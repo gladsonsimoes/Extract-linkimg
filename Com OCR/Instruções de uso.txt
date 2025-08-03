@@ -1,0 +1,15 @@
+MODO COM OCR ( Ideal para guardar arquivo PDF)
+O modo com OCR ele extrai texto de imagem , sendo ideal para quem usa buscar no pdf através de texto , ou copiar determinado trechos
+
+UTILIZAÇÃO:
+
+- Vá para a pasta Programas
+
+- entra um site por exemplo um site de apostila que as páginas são em imagem , abre o código fonte da página que você quer salvar as imagens , copie o código todo e coloca em um arquivo html na pasta "html_files (nele vai ter um exemplo de arquivo)"
+
+- Após colocar o arquivo html com o código , vá no script "download_img_links.ps1" e clique em executar , o script irá copiar todos os links do html que contém o atributo img, e as imagens serão baixadas na pasta "Files-Create\downloaded_images".
+
+- após você ter baixado todas as imagens você pode ir no script "image-for-pdf-OCR.ps1" para converter as imagens em pdf, os arquivos de pdf serão salvos na pasta "Files-Create\pdfCreate"
+
+- em seguida se você quiser pode unir as páginas de pdf no script "pdf-merged.ps1" ,  os arquivos de pdf mesclados serão salvos na pasta "Files-Create\pdf-Mesclado"
+

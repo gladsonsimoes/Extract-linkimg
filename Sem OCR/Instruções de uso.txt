@@ -1,0 +1,11 @@
+MODO SEM OCR ( RECOMENDAVEL PARA IMPRESSÃO )
+O modo sem OCR não extrai texto de imagem , sendo assim o processo é mais rápido, este modo é ideal para quem quer imprimir folhas de páginas por exemplo 
+
+UTILIZAÇÃO:
+
+- você entra um site por exemplo , um site de apostila que as páginas são em img , você copia o código todo em coloca em um arquivo html na pasta "html_files (nele vai ter um exemplo de arquivo)"
+
+- Após colocar o arquivo html com o código , vá no script "download_img_links.ps1" e clique em executar , o script irá copiar todos os links de imagens disponivel no código html
+
+- após você ter baixado todas as imagens você pode ir no script "image-merged-pdf.ps1" para converter as imagens em pdf , e os pdf são mesclados 
+

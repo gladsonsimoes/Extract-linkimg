@@ -1,0 +1,1040 @@
+<body class="loaded">
+<input type="hidden" id="idPlanejamento" value="9">
+<input type="hidden" id="disciplina" value="Controle de Processos">
+
+<input type="hidden" id="hostUsuario" value="https://cedtec.pincelatomico.net.br/novo/">
+<input type="hidden" id="usuario" value="91620039">
+<!-- Loading wrapper starts -->
+    <div id="loading-wrapper" style="display: none;">
+        <div id="loader"></div>
+    </div>
+<!-- Loading wrapper ends -->
+
+<!-- Header starts -->
+<header class="clearfix">
+
+    <div class="logo" style="padding: 5px">
+        <a href="index.php">
+            <img src="../novo/img/sistema/logo-interna-pincel.png" style="max-width: 200px; height: 48px" alt="Logo">
+        </a>
+    </div>
+
+            <div class="logoEmpresa" style="padding: 13px">
+            <img style="max-height: 48px;" src="https://pincelatomico.s3.sa-east-1.amazonaws.com/10/img/sistema/10.png" alt="Logo">
+        </div>
+    
+
+    <div class="pull-right hidden-xs">
+        <ul id="header-actions" class="clearfix">
+
+            <li class="list-box user-admin dropdown">
+                <div class="admin-details hidden-xs">
+                    <div class="name">GLADSON SILVA SIMÕES</div>
+                    <div class="designation">Aluno <b>IP: </b>2804:1b3:9103:e064:2c14:68b:493b:1b64 - 02/08/2025</div>
+                </div>
+                <a id="drop4" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                    <img class="img-usuario" src="https://pincelatomico.s3.sa-east-1.amazonaws.com/10/perfil/91620039.jpeg">
+                </a>
+                <ul class="dropdown-menu sm">
+                    <li class="dropdown-content">
+                        <a href="perfil.php">Perfil</a>
+                        <a target="_blank" href="termo_uso.php">Termo de Uso</a>
+                        <a href="../acesso/index.php?sair=1">Sair</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+
+    
+</header>
+<!-- Header ends -->
+<!-- MODAL DE ALERTA -->
+<!-- Modal Large -->
+<div class="modal fade" id="msgPincel" tabindex="-1" role="dialog" aria-labelledby="msgPincel" style="z-index: 99999999;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close-alertV" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="msgPincelTitulo"></h4>
+            </div>
+            <div id="msgPincelCorpo" class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">
+                    <div id="msgPincelBotao"> Ok </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Suporte -->
+<div class="modal fade" id="modalSuporte" tabindex="-1" role="dialog" aria-labelledby="modalSuporte">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close-alertV" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Está encontrando algum problema ou dificuldade? Podemos te ajudar!</h4>
+            </div>
+            <div class="modal-body">
+                <label>Página: </label>
+                <input type="text" disabled="disabled" class="form-control" value="/externos/apostilaView.php?hash=45c48cce2e2d7fbdea1afc51c7c6ad26">
+                <input type="hidden" id="suportePagina" class="form-control" value="/externos/apostilaView.php?hash=45c48cce2e2d7fbdea1afc51c7c6ad26">
+                <label>Navegador / OS: </label>
+                <input type="text" disabled="disabled" class="form-control" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36">
+                <input type="hidden" id="suporteNavegador" class="form-control" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36">
+                <label>Mensagem:</label>
+                <div id="mceu_6" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px; width: 100%;"><div id="mceu_6-body" class="mce-container-body mce-stack-layout"><div id="mceu_7" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first" hidefocus="1" tabindex="-1" role="group"><div id="mceu_7-body" class="mce-container-body mce-stack-layout"><div id="mceu_8" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_8-body" class="mce-container-body mce-flow-layout"><div id="mceu_9" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_9-body"><div id="mceu_0" class="mce-widget mce-btn mce-colorbutton mce-first mce-last" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-backcolor"></i><span id="mceu_0-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div></div></div><div id="mceu_10" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_10-body"><div id="mceu_1" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="Bold"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Italic"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="Underline"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button></div></div></div></div></div><div id="mceu_11" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_11-body" class="mce-container-body mce-flow-layout"><div id="mceu_12" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group" role="group"><div id="mceu_12-body"><div id="mceu_4" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="WIRIS EDITOR math"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url('https://cedtec.pincelatomico.net.br/externos/tinymce2/plugins/tiny_mce_wiris/icons/formula.png')"></i></button></div><div id="mceu_5" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="WIRIS EDITOR chemistry"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url('https://cedtec.pincelatomico.net.br/externos/tinymce2/plugins/tiny_mce_wiris/icons/chem.png')"></i></button></div></div></div></div></div></div></div><div id="mceu_13" class="mce-edit-area mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="suporteMensagem_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" style="width: 100%; height: 150px; display: block;"></iframe></div></div><div class="mce-branding-powered-by" style="right: 0px; bottom: 1px;"></div></div><textarea id="suporteMensagem" class="form-control" style="width: 100%; height: 150px; display: none;" aria-hidden="true"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    Cancelar
+                </button>
+                <button type="button" id="enviarEmailSuporte" class="btn btn-success" data-dismiss="modal">
+                    Enviar E-mail de Suporte
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<input id="idEmpresa" type="hidden" value="10">
+<input id="usuarioOnline" type="hidden" value="91620039">
+<input id="nomeUsuario" type="hidden" value="GLADSON SILVA SIMÕES">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../novo/js2/jquery.js"></script>
+<script language="javascript">
+    function loadOn(){
+        $('body').removeClass('loaded');
+        $('#salaPrincipal').show();
+    }
+    function loadOff(){
+        $('body').addClass('loaded');
+    }
+    function alertV(titulo, msg, button){
+        $('#msgPincelCorpo').html(msg);
+        $('#msgPincelBotao').html(button);
+        $('#msgPincelTitulo').html(titulo);
+        $('#msgPincel').modal('show');
+    }
+    function alertVNovo(titulo, msg, button, reload = false){
+        $('#msgPincelCorpo').html(msg);
+        $('#msgPincelBotao').html(button);
+
+        if(reload == true)
+            $('#msgPincelBotao').parent('button').attr('onClick','window.location.reload()');
+        if(reload != false && reload != undefined && reload != true)
+            $('#msgPincelBotao').parent('button').attr('onClick','window.location.href="'+reload+'"');
+
+        $('#msgPincelTitulo').html(titulo);
+        $('#msgPincel').modal('show');
+    }
+    var linkPadrao = $('#hostUsuario').val();
+
+
+    $('body').on('click', '.close-alertV', function(e){
+        $('#msgPincelCorpo').html('');
+        $('#msgPincel').modal('hide');
+    });
+
+    $('body').on('click', '.abrirTutorialAluno', function(e){
+        alertV('Atualização de Sistema', '<iframe width="100%" height="500px" src="../bv/tutorialaluno.mp4" frameborder="no" scrolling="no"></iframe>', 'Ok');
+    });
+
+    $('body').on('click', '.verNotificacao', function(e){
+        loadOn();
+        var idNotificacao = $(this).attr('idNotificacao');
+        var usuario = $('#usuario').val();
+        $.post(linkPadrao+'/ajax/adm/notificacao.php', {
+            acao: 'carregarNotificacao',
+            id: idNotificacao,
+            usuario: usuario
+        }, function(retorno){
+            if(retorno['status'] == 1){
+                alertV(retorno['titulo'], retorno['corpo'], 'Ok');
+                $('#notificacaoPendente').html(retorno['naoLido']);
+                $(this).hide();
+            }
+            loadOff();
+        }, 'jSON')
+            .fail(function() {
+                alert( "Erro: Verifique sua conexão com a internet." );
+                loadOff();
+            });
+    });
+
+    $('body').on('click', '.botaoChat', function(e){
+
+        $('.chatBox').attr('ativo',1);
+        $( ".chatBox" ).animate({
+            height: "toggle"
+        }, "fast", function() {
+            $("iframe").contents().find("#tawkchat-minified-wrapper").hide();
+            $('.chatBox').show();
+
+        });
+
+    });
+
+    $('body').on('click', '.container-fluid', function(e){
+        var checkOn = $( ".chatBox" ).attr('ativo');
+
+        if(checkOn == 1){
+            $('.chatBox').attr('ativo',0);
+            $( ".chatBox" ).animate({
+                height: "toggle"
+            }, "fast", function() {
+                $('.chatBox').hide();
+                $("iframe").contents().find("#tawkchat-minified-wrapper").show();
+            });
+        }
+
+    });
+</script><div class="blocoNotas" style="display: none;">
+    <div class="blocoNotasTitulo">
+        <center>Minhas Anotações</center>
+    </div>
+    <input type="hidden" id="uid" value="10/CTP">
+    <input type="hidden" id="usuario" value="91620039">
+    <div id="mceu_20" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px; width: 100%;"><div id="mceu_20-body" class="mce-container-body mce-stack-layout"><div id="mceu_21" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first" hidefocus="1" tabindex="-1" role="group"><div id="mceu_21-body" class="mce-container-body mce-stack-layout"><div id="mceu_22" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_22-body" class="mce-container-body mce-flow-layout"><div id="mceu_23" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group"><div id="mceu_23-body"><div id="mceu_14" class="mce-widget mce-btn mce-colorbutton mce-first mce-last" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-backcolor"></i><span id="mceu_14-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div></div></div><div id="mceu_24" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group"><div id="mceu_24-body"><div id="mceu_15" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="Bold"><button id="mceu_15-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Italic"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_17" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="Underline"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button></div></div></div></div></div><div id="mceu_25" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_25-body" class="mce-container-body mce-flow-layout"><div id="mceu_26" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group" role="group"><div id="mceu_26-body"><div id="mceu_18" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="WIRIS EDITOR math"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url('https://cedtec.pincelatomico.net.br/externos/tinymce2/plugins/tiny_mce_wiris/icons/formula.png')"></i></button></div><div id="mceu_19" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="WIRIS EDITOR chemistry"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url('https://cedtec.pincelatomico.net.br/externos/tinymce2/plugins/tiny_mce_wiris/icons/chem.png')"></i></button></div></div></div></div></div></div></div><div id="mceu_27" class="mce-edit-area mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="anotacoes_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" style="width: 100%; height: 500px; display: block;"></iframe></div></div><div class="mce-branding-powered-by" style="right: 0px; bottom: 1px;"></div></div><textarea id="anotacoes" style="height: 500px; max-width: 100%; display: none;" aria-hidden="true"></textarea>
+</div>
+
+    <div class="icons hidden-xs hidden-sm" id="abrirAnotacao" data-toggle="tooltip" data-original-title="Minhas Anotações" data-placement="left" style="float: right; position: fixed; right: 0px; background-color: black; color: white; font-size: 40px; top: 90px; height: 50px; width: 50px; z-index: 10000; cursor: pointer; padding-top: 5px; display: block;">
+        <i class="icon-text" style="/*! margin-top: 11px; */"></i>
+    </div>
+    
+    <!-- Container fluid starts -->
+    <div class="row gutter corpoPage" align="center" style="margin-bottom: 60px; margin-right: 0;">
+                    <div id="page-1" style="" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-1" class="imgpage" src="https://storage.solucoesdidaticas.com.br/aps/10/9/f9e8bf561c2375dfbbcca0a8646a2823.jpg" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/f9e8bf561c2375dfbbcca0a8646a2823.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-2" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-2" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/723953022ff679f031d68258bcc34f1e.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-3" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-3" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/2260215846b317612e166b54d741325b.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-4" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-4" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/d530a0a56dae42808670571158e5a092.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-5" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-5" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/348b5ad29475d043b49455d086cdc8a4.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-6" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-6" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/617e82cc0d37c9b70e962a9a0d3b6a60.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-7" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-7" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/49c9a1d664c4091adc7974708981e1cc.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-8" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-8" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/e51f9b11133aa61b782d3afdb8441190.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-9" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-9" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/482985c26e3e2d4ad686aa1a72a6735f.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-10" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-10" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/45f6eb98628b96786119d76ff88f2456.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-11" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-11" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/21e42f64b3d45f6d0387a514a7fd177d.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-12" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-12" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/076ec65c96a7995daa4c78306ac0caeb.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-13" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-13" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/36ba640689ec60605ad57be77deab47a.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-14" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-14" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/ef6cea00bb123ecefefb1efe03990b2a.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-15" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-15" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/40b8b3fef433222fb4d0ad9f64f5124f.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-16" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-16" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/af9a1529314b6857978b50a8cb77b473.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-17" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-17" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/422efe04e4f550e1225547c42fe180f9.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-18" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-18" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/698bdca3cd8ad79c8c800996cf8cf52c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-19" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-19" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/ef2f08f9976cdb454734323a32ab06e0.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-20" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-20" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/9ea35ff99eb39790559aaf78eae9bc0c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-21" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-21" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/fa3402ae59246d028cd788e5fb2328ad.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-22" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-22" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/681b004ffd8561dc71a052cf1edb5349.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-23" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-23" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/5b3b04835ed74b0df105d0267a5592c5.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-24" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-24" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/f50722a1e5838d5152e3b4b94fe8a98b.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-25" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-25" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/0dad2276579269c233848a7150c55c10.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-26" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-26" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/9f577cbb3e279d147ce4a39bb9c76c3b.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-27" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-27" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/f603cdb9d41648095c55c4db5fe55a79.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-28" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-28" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/28c7a1604c330d2f664128fe61bf777a.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-29" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-29" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/e7e0b1553f13ef1a7e705cf118e61895.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-30" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-30" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/a01cf5bd14ec879c7979989b82fe5758.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-31" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-31" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/9c42d779dfa8b1eda82ddd76c53f248d.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-32" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-32" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/80e360247887205f563258f720633dfc.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-33" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-33" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/5fe945252b594f62d3b4f3a63272e52d.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-34" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-34" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/cadd27b33d83d645febf3c4057eb1b09.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-35" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-35" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/4a33d41787aa86d7c95c43126a90c75c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-36" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-36" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/dbdce64379d05085ea798a87e70969b0.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-37" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-37" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/6d0fe8028cd9924e39a6056b91064d28.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-38" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-38" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/ff800ab8aecce48837055265d0d3244b.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-39" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-39" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/af0dec698da6595bf20115dd09296a3c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-40" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-40" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/add84f0cad2e39225cc929afd0e3e2db.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-41" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-41" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/d420c970443bbc0aa6226b07f8d19fc6.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-42" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-42" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/0e95d535facbb05684d9572dbc5c468f.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-43" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-43" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/efb7fccc24fbda485e0a0a9b9012bf15.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-44" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-44" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/4769533687f68537b430d1adcb25cb3c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-45" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-45" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/b596c1882362e8360767a3f288ed2c7e.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-46" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-46" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/cf74933816b8837010de409bdad9ee1d.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-47" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-47" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/df4ecc8f46503cb2d716f1c4a8314aa0.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-48" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-48" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/523d25dc017d286179578c20fa1c1288.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-49" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-49" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/0821cdea2a6b992f19db48d3070eadf4.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-50" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-50" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/3e5d1a0e9872cb0871c3eb4e07caf5ed.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-51" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-51" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/940bddf0284d69920a1ab9bc1ca23ca7.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-52" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-52" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/73ea96aff243b7885655d0075ed0feb3.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-53" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-53" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/02c680b6f891cbe821c9c2495ecc864d.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-54" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-54" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/0967807fd529de61c0f964e862019cf6.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-55" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-55" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/f671efee2a76c15faeb9fe4afb4b82dd.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-56" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-56" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/de9b2271bb3d213fb1b71feb9461eaae.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-57" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-57" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/56251e6ab0e07d7a85a17c3ed661a733.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-58" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-58" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/922228cfe12642b0c2514beea72ffc49.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-59" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-59" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/27b659952ff64cc23b305361f68f5535.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-60" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-60" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/b1a2b1b8a8c0afc9e10aaf8617c0b355.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-61" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-61" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/5a47bfd9a631944104f07adc38fb14c7.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-62" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-62" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/a084f2ba3fbc1d32bc13f32fdb341941.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-63" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-63" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/54d003ed8c8e8b68bd70f0bc91312f83.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-64" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-64" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/3cf6fcba74444d04e761358963f6fb2f.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-65" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-65" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/43964d8c0163941f45853393807e63b0.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-66" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-66" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/a53cea1bbef5597dc4fbc2986f7ae931.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-67" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-67" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/e4ba790c62dac206c4131e90fd588438.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-68" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-68" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/7a51f9109f6ecba230552c4ef896212c.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-69" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-69" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/928ae22c3c9d142b5b62549b1990b77f.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-70" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-70" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/48af24f2fb735384a55987ea27eb8dba.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-71" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-71" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/d26c8cfee6e10ed79b480c8bbe6e77df.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-72" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-72" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/3c7475632130ec169f1e6c2f6cd92112.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-73" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-73" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/ec0e460b35911c6fa194b2e7b32daa06.jpg" style="width: 40%">
+                </div>
+            </div>
+                        <div id="page-74" style="display: none" class="col-lg-12 col-md-12 img-responsive paginas">
+                <div onmousedown="javascript:return zoom();" class="apspincel">
+                    <img id="pageImg-74" class="imgpage" onmousedown="javascript:return disableselect()" linkimg="https://storage.solucoesdidaticas.com.br/aps/10/9/a9e0e26fbd7be9a361f3eac0a41c3af9.jpg" style="width: 40%">
+                </div>
+            </div>
+                </div>
+        <div style="width: 100%;background-color: whitesmoke; height: 50px; position: fixed; bottom: 0; padding: 10px" class="rodapeApostila">
+        <div class="col-lg-4 col-mg-4 col-sm-6 col-xs-6" style="margin-top: -10px">
+            <b style="font-size: 10px">Página</b><br>
+            <input id="paginaAtual" type="number" min="1" max="74" value="1" style="width: 50px"> / <input id="maxPagina" readonly="readonly" disabled="disabled" style="width: 50px" type="number" value="74">
+        </div>
+        <div class="col-lg-4 col-mg-4 col-sm-6 col-xs-6" align="center" style="margin-top: -10px">
+            <b style="font-size: 10px">Navegação</b><br>
+            <div class="icons">
+                <button class="btn btn-info" id="voltarPagina" style="width: 30px; height: 30px; padding: 0px" title="Pagina Anterior">
+                    <i class="icon-arrow-left"></i>
+                </button>
+                <button class="btn btn-info" style="width: 30px; height: 30px; padding: 0px" id="avancarPagina" title="Próxima Página">
+                    <i class="icon-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-4 col-mg-4 hidden-xs hidden-sm hidden-md" align="right" style="margin-top: -10px">
+            <b style="font-size: 10px">Zoom</b><br>
+            <div class="slidecontainer">
+                <input type="range" min="40" max="100" value="40" class="slider" id="zoom">
+            </div>
+        </div>
+    </div>
+<input type="hidden" value="0" id="isMobile"><!-- Container fluid ends -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../novo/js2/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../novo/js2/bootstrap.min.js"></script>
+
+<!-- Datepicker -->
+<script src="../novo/js2/jquery-datepicker/jquery-ui.js"></script>
+
+<!-- jquery ScrollUp JS -->
+<script src="../novo/js2/scrollup.min.js"></script>
+
+<!-- Common JS -->
+<script src="../novo/js2/common.js?v=1"></script>
+
+<script type="text/javascript">
+    //Datepicker
+    jQuery(function($){
+        $.datepicker.regional['pt-BR'] = {
+            closeText: 'Fechar',
+            prevText: '&#x3c;Anterior',
+            nextText: 'Pr&oacute;ximo&#x3e;',
+            currentText: 'Hoje',
+            monthNames: ['Janeiro','Fevereiro','Mar&ccedil;o','Abril','Maio','Junho',
+                'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+                'Jul','Ago','Set','Out','Nov','Dez'],
+            dayNames: ['Domingo','Segunda-feira','Ter&ccedil;a-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+            dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 0,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''};
+        $.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+    });
+
+    $(".default-date-picker").attr('autocomplete','off');
+    function sleep(milliseconds) {
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds) {
+                break;
+            }
+        }
+    }
+
+    function moedaParaNumero(valor)
+    {
+        return isNaN(valor) == false ? parseFloat(valor) :   parseFloat(valor.replace("R$","").replace(".","").replace(",","."));
+    }
+
+    function numeroParaMoeda(n, c, d, t)
+    {
+        c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
+
+    $('body').on('click', '#abrirSuporte', function(e){
+        $('#modalSuporte').modal('show');
+    });
+    $('body').on('click', '#enviarEmailSuporte', function(e){
+        var texto = $('#suporteMensagem').val();
+        var pagina = $('#suportePagina').val();
+        var navegador = $('#suporteNavegador').val();
+        if(texto == ''){
+            alert('Erro: você deve escrever algum texto para enviar o e-mail');
+            return;
+        }
+        loadOn();
+        //envia o post
+        $.post(linkPadrao+'/ajax/academico/enviarEmail.php', {
+            acao: 'enviarEmailSuporte',
+            texto: texto,
+            pagina: pagina,
+            navegador: navegador
+        }, function(retorno){
+            if(retorno['status'] == 1){
+                alert('Seu e-mail foi enviado com sucesso! Responderemos em até 72 horas.');
+            }
+            loadOff();
+        }, 'jSON')
+            .fail(function() {
+                alert( "Erro: Verifique sua conexão com a internet." );
+                loadOff();
+            });
+    });
+
+
+</script>
+
+<script src="../novo/js2/chosen/chosen.jquery.js?v=1" type="text/javascript"></script>
+<script src="../novo/js2/chosen/docsupport/prism.js?v=1" type="text/javascript" charset="utf-8"></script>
+<script src="../novo/js2/chosen/docsupport/init.js?v=1" type="text/javascript" charset="utf-8"></script>
+<script src="../novo/js/pages/shared/confirm-custom.js?v=1646269016"></script>
+<script type="text/javascript" src="../novo/js/pages/shared/cidades.js"></script>
+<script>
+    $('#conta').chosen();
+</script>
+<!--<script type="text/javascript" src="../novo/js/mobile-first.js?v=41" charset="utf-8"></script>-->
+
+
+
+
+    <script>
+
+    function logUsuarioOnline(dadosExtras = {}) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                enviarLog(position.coords.latitude, position.coords.longitude, dadosExtras);
+            }, function (error) {
+                enviarLog(null, null, dadosExtras); // Sem localização
+            });
+        } else {
+            enviarLog(null, null, dadosExtras);
+        }
+    }
+
+    function enviarLog(lat, lng, dadosExtras) {
+
+        var app = 0;
+        if(isMobileDevice()){
+            app = 1;
+        }
+        // Monte os dados do seu usuário aqui
+        var dados = {
+            acao: 'logNovo',
+            usuario: $('#user_usuario').val(),              // Defina no seu JS globalmente no login
+            nome: $('#user_nome').val(),               // Idem
+            empresa: $('#user_empresa').val(),               // Idem
+            nivel: $('#user_nivel').val(),               // Idem
+            user_agent: navigator.userAgent,
+            latitude: lat,
+            longitude: lng,
+            url: window.location.pathname,
+            params: window.location.search,
+            app: app                                   // ou 1 se for app, defina conforme contexto
+        };
+
+        $.post(linkPadrao+'/ajax/adm/log.php', dados, function(retorno){
+
+        }, 'jSON');
+
+        // console.log(dados);
+    }
+
+    function isMobileDevice() {
+        return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase());
+    }
+
+    function pedirPermissaoLocalizacao(callback) {
+        let status = localStorage.getItem('permissao_geo');
+        if (status === null) {
+            // Se nunca foi perguntado, peça ao navegador:
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    // Usuário aceitou
+                    localStorage.setItem('permissao_geo', 'granted');
+                    callback(true, position.coords.latitude, position.coords.longitude);
+                },
+                function (error) {
+                    // Usuário negou OU erro
+                    if (error.code === error.PERMISSION_DENIED) {
+                        localStorage.setItem('permissao_geo', 'denied');
+                    }
+                    callback(false, null, null);
+                }
+            );
+        } else if (status === 'granted') {
+            // Já autorizado, pegue direto
+            navigator.geolocation.getCurrentPosition(function (position) {
+                callback(true, position.coords.latitude, position.coords.longitude);
+            }, function () { callback(false, null, null); });
+        } else {
+            // Já negado, não pede mais
+            callback(false, null, null);
+        }
+    }
+
+
+    $(document).ready(function() {
+        pedirPermissaoLocalizacao(function(permitido, lat, lng) {
+            if (permitido) {
+                // Guarde lat/lng, faça log, etc
+                logUsuarioOnline({latitude: lat, longitude: lng});
+            } else {
+                // Segue sem geolocalização
+                logUsuarioOnline({latitude: null, longitude: null});
+            }
+        });
+    });
+</script>
+<script src="../externos/tinymce2/tinymce.min.js"></script>
+<script src="../css/ion.rangeSlider/js/ion.rangeSlider.js"></script>
+<script>
+    tinymce.init({
+        mode: 'textareas',
+        menubar:false,
+        statusbar: false,
+        plugins: [
+            "moxiemanager autolink link image lists charmap print hr preview anchor pagebreak",
+            "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking spellchecker",
+            "table directionality emoticons paste textcolor tiny_mce_wiris "
+        ],
+        relative_urls: false,
+        image_advtab: false,
+        toolbar1: "backcolor | bold italic underline",
+        toolbar2: "tiny_mce_wiris_formulaEditor tiny_mce_wiris_formulaEditorChemistry tiny_mce_wiris_CAS",
+        setup: function (ed) {
+            ed.on('keyup', function (e) {
+                tinyMceChange(ed);
+            });
+            ed.on('change', function(e) {
+                tinyMceChange(ed);
+            });
+        }
+    });
+
+    function tinyMceChange(ed) {
+        var usuario = $('#usuario').val();
+        var uid = $('#uid').val();
+        var anotacao = ed.getContent();
+
+        $.post(linkPadrao+'/ajax/academico/apostila.php', {
+            acao: 'anotacoes',
+            usuario: usuario,
+            uid: uid,
+            anotacao: anotacao
+        }, function(retorno){
+        }, 'jSON')
+            .fail(function() {
+                alert( "Erro: Verifique sua conexão com a internet." );
+                loadOff();
+            });
+    }
+
+
+    function disableselect(e){
+        return false
+    }
+
+    function reEnable(){
+        return true
+    }
+
+    //if IE4+
+    document.onselectstart=new Function ("return false");
+    document.oncontextmenu=new Function ("return false");
+    //if NS6
+    if (window.sidebar){
+        //document.onmousedown=disableselect;
+        //document.onclick=reEnable;
+    }
+
+
+    if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+    } else { //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+    }
+
+    function bloquearSource(e) {
+        e = e || window.event;
+
+        if(e.keyCode == 37){
+            voltarPagina();
+        }
+        if(e.keyCode == 39){
+            avancarPagina();
+        }
+
+        var code = e.which || e.keyCode;
+
+        if (
+            e.ctrlKey &&
+            (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+
+            return false;
+        }
+    }
+
+    function carregarPagina(){
+        var paginaAtual = parseInt($('#paginaAtual').val());
+        var idPlanejamento = ($('#idPlanejamento').val());
+        var disciplina = ($('#disciplina').val());
+        var maxPagina = parseInt($('#maxPagina').val());
+        if(paginaAtual > maxPagina){
+            console.log(paginaAtual);
+            console.log(maxPagina);
+            return;
+        }
+        if(paginaAtual < 0){
+            alert('Digite um valor de página de '+paginaAtual+' e '+maxPagina+' paginas.');
+            return;
+        }
+        if(paginaAtual){
+            $('.paginas').hide();
+            $('#pageImg-'+paginaAtual).css('width', $('#zoom').val()+'%');
+            $('#pageImg-'+paginaAtual).attr('src', $('#pageImg-'+paginaAtual).attr('linkImg'));
+            $('#page-'+paginaAtual).show();
+        }
+
+        atualizarLog(idPlanejamento, disciplina, paginaAtual);
+
+    }
+    $('body').on('change', '#zoom', function(e){
+        carregarZoom();
+    });
+
+    $('body').on('click', '.corpoPage', function(e){
+        fecharAnotacoes();
+    });
+    $('body').on('mouseenter', '.row', function(e){
+        fecharAnotacoes();
+    });
+    $('body').on('click', '.rodapeApostila', function(e){
+        fecharAnotacoes();
+    });
+
+    $('body').on('click', '#abrirAnotacao', function(e){
+        abrirAnotacoes();
+    });
+
+    $('body').on('click', '#abrirAnotacaoCel', function(e){
+        var aberto = ($(this).attr('aberto'));
+        if(aberto == 0){
+            $(this).attr('aberto', 1);
+            abrirAnotacoes();
+            return;
+        }
+        if(aberto == 1){
+            $(this).attr('aberto', 0);
+            fecharAnotacoes();
+            return;
+        }
+    });
+
+
+    function zoom(){
+        if(parseInt($('#isMobile').val()) == 1){
+            return;
+        }
+        var zoomAtual = parseInt($('#zoom').val());
+        if(zoomAtual >= 80){
+            $('#zoom').val(40);
+            $('.imgpage').css('cursor', 'zoom-in');
+        }
+        if(zoomAtual < 80){
+            $('#zoom').val(80);
+            $('.imgpage').css('cursor', 'zoom-out');
+        }
+        carregarZoom();
+        disableselect();
+    }
+
+
+    function carregarZoom(){
+        var paginaAtual = $('#paginaAtual').val();
+        $('#pageImg-'+paginaAtual).css('width', $('#zoom').val()+'%');
+        $('#zoom').focusout();
+    }
+
+    $('body').on('keyup', '#paginaAtual', function(e){
+        carregarPagina();
+    });
+
+    $('body').on('change', '#paginaAtual', function(e){
+        carregarPagina();
+    });
+
+    $('body').on('click', '#avancarPagina', function(e){
+        avancarPagina();
+    });
+    $('body').on('click', '#voltarPagina', function(e){
+        voltarPagina();
+    });
+
+    function avancarPagina(){
+        var maxPagina = parseInt($('#maxPagina').val());
+        var novaPagina = parseInt($('#paginaAtual').val())+1;
+        if(novaPagina > maxPagina){
+            return;
+        }
+        $('#paginaAtual').val(novaPagina);
+        carregarPagina();
+    }
+
+    function voltarPagina(){
+        var novaPagina = parseInt($('#paginaAtual').val())-1;
+        if(novaPagina < 1){
+            return;
+        }
+        $('#paginaAtual').val(novaPagina);
+
+        carregarPagina();
+    }
+
+    function abrirAnotacoes() {
+        $('.blocoNotas').show();
+        $('#abrirAnotacao').hide();
+    }
+    function fecharAnotacoes() {
+        $('.blocoNotas').hide();
+        $('#abrirAnotacao').show();
+    }
+
+    function atualizarLog(idPlanejamento, disciplina, pagina) {
+
+        // $.post(linkPadrao+'/ajax/academico/apostila.php', {
+        //     acao: 'inserirLog',
+        //     idPlanejamento: idPlanejamento,
+        //     disciplina: disciplina,
+        //     pagina: pagina
+        // }, function(retorno){
+        // }, 'jSON')
+        //     .fail(function() {
+        //         alert( "Erro: Verifique sua conexão com a internet." );
+        //     });
+    }
+
+</script><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;9d9f4a2b964e4293bc3b9a3a8f39e09f&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+
+<a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="icon-arrow_drop_up"></i></a></body>
