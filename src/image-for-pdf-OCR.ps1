@@ -1,9 +1,14 @@
 ﻿# Caminho do executável Tesseract
-$tesseractPath = ".\Arquives\Packages\Tesseract-OCR\tesseract.exe"
+$tesseractPath = "..\modules\Tesseract-OCR\tesseract.exe"
 
 #Caminho do TESSDATA
-$tessdata = ".\Arquives\Packages\Tesseract-OCR\tessdata"
+$tessdata = "..\modules\Tesseract-OCR\tessdata"
 
+# Pasta onde estão as imagens
+$imagensPath = "..\output\Files_create\download_imgs"
+
+# Pasta de saída para gerar os pdf
+$saidaPath = "..\output\Files_create\Pdf-ocr-create"
 
 #Verificando se o caminho Tesseract está certo
 if (-not (Test-Path $tesseractPath)) {
@@ -15,6 +20,9 @@ if (-not (Test-Path $tesseractPath)) {
     Read-Host "      Pressione ENTER para sair"
     exit
 } 
+
+$tesseract = Resolve-Path $tesseractPath
+
 #Verificando se o caminho Tessdata está certo
 if (-not (Test-Path $tessdata)) {
     Write-Host "
@@ -26,23 +34,17 @@ if (-not (Test-Path $tessdata)) {
     exit
 }
 
-
-$tesseract = Resolve-Path $tesseractPath
-
 $env:TESSDATA_PREFIX = (Resolve-Path $tessdata).Path
-
-# Pasta onde estão as imagens
-$imagensPath = "..\Files_create\download_imgs"
-
-# Pasta de saída
-$saidaPath = ".\Files_create\Pdf-ocr-create"
 
 # Limpar PDFs antigos
 if (Test-Path $saidaPath) {
     Get-ChildItem -Path $saidaPath -Filter *.pdf -File | Remove-Item -Force
 } 
 
-New-Item -ItemType Directory -Path $saidaPath -Force | Out-Null
+#Criar pasta para saida de PDF caso não exista
+if (-not (Test-Path $saidaPath)) {
+    New-Item -ItemType Directory -Path $saidaPath | Out-Null
+}
 
 Write-Host "`n🧠 Iniciando OCR com Tesseract..." -ForegroundColor Cyan
 
