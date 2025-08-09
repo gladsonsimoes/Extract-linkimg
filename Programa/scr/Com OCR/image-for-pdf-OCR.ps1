@@ -1,57 +1,92 @@
-﻿# Caminho do Tesseract
-$tesseract = ".\scr\Com OCR\Arquives\Packages\Tesseract-OCR\tesseract.exe"
+﻿# Caminho do executável Tesseract
+$tesseractPath = ".\Arquives\Packages\Tesseract-OCR\tesseract.exe"
+
+#Caminho do TESSDATA
+$tessdata = ".\Arquives\Packages\Tesseract-OCR\tessdata"
+
+
+#Verificando se o caminho Tesseract está certo
+if (-not (Test-Path $tesseractPath)) {
+    Write-Host "
+    
+    ❌ Caminho do Tesseract inválido: $tesseractPath
+    
+    " -ForegroundColor Red
+    Read-Host "      Pressione ENTER para sair"
+    exit
+} 
+#Verificando se o caminho Tessdata está certo
+if (-not (Test-Path $tessdata)) {
+    Write-Host "
+    
+    ❌ Caminho do Tessdata inválido: $tessdata
+    
+    " -ForegroundColor Red
+    Read-Host "     Pressione ENTER para sair"
+    exit
+}
+
+
+$tesseract = Resolve-Path $tesseractPath
+
+$env:TESSDATA_PREFIX = (Resolve-Path $tessdata).Path
 
 # Pasta onde estão as imagens
-$imagensPath = ".\Files_create\download_imgs"
+$imagensPath = "..\Files_create\download_imgs"
 
 # Pasta de saída
 $saidaPath = ".\Files_create\Pdf-ocr-create"
 
-# 🧹 Apaga todos os PDFs existentes na pasta de saída
+# Limpar PDFs antigos
 if (Test-Path $saidaPath) {
     Get-ChildItem -Path $saidaPath -Filter *.pdf -File | Remove-Item -Force
-}
+} 
 
-# Cria a pasta de saída (caso não exista)
 New-Item -ItemType Directory -Path $saidaPath -Force | Out-Null
 
-# Definir variável de ambiente para os dados do Tesseract
-$env:TESSDATA_PREFIX = (Resolve-Path ".\scr\Com OCR\Arquives\Packages\Tesseract-OCR\tessdata").Path
-
-# Mostrar início do processo
 Write-Host "`n🧠 Iniciando OCR com Tesseract..." -ForegroundColor Cyan
 
-# Verifica se há imagens e ordena numericamente (ex: arquivo_1.jpg, arquivo_2.jpg...)
-$imagens = Get-ChildItem -Path "$imagensPath\*" -Include *.png, *.jpg, *.jpeg, *.tif, *.tiff -File |
-    Sort-Object { [int]($_.BaseName -replace '\D', '') }
+# Ordenar as imagens de forma segura
+$imagens = Get-ChildItem -Path $imagensPath -File |
+    Where-Object { $_.Extension -match '^\.(png|jpg|jpeg|tif|tiff)$' } |
+    Sort-Object {
+        $num = $_.BaseName -replace '\D', ''
+        if ([string]::IsNullOrEmpty($num)) { 0 } else { [int]$num }
+    }
 
 if ($imagens.Count -eq 0) {
-    Write-Host "Nenhuma imagem encontrada na pasta $imagensPath" -ForegroundColor Yellow
-    pause
+    Write-Host "⚠ Nenhuma imagem encontrada em '$imagensPath'" -ForegroundColor Yellow
+    Read-Host "Pressione ENTER para sair"
     exit
 }
 
-# Processar cada imagem
+# Lista para imagens que falharem
+$imagensErro = @()
+
 foreach ($img in $imagens) {
     $imagem = $img.FullName
     $nomeBase = [System.IO.Path]::GetFileNameWithoutExtension($img.Name)
-    $saidaPDF = Join-Path $saidaPath "$nomeBase"
+    $saidaPDF = Join-Path $saidaPath $nomeBase
 
     Write-Host "🔍 Processando imagem: $($img.Name)..."
 
-    # Executa o OCR com Tesseract
-    $proc = Start-Process -FilePath $tesseract `
-        -ArgumentList "`"$imagem`"", "`"$saidaPDF`"", "-l", "por", "pdf" `
-        -NoNewWindow -Wait -PassThru
+    & $tesseract $imagem $saidaPDF -l por pdf
 
-    if ($proc.ExitCode -ne 0) {
-        Write-Host "❌ ERRO ao processar $($img.Name). Código de saída: $($proc.ExitCode)" -ForegroundColor Red
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "❌ ERRO ao processar $($img.Name). Código de saída: $LASTEXITCODE" -ForegroundColor Red
+        $imagensErro += $img.Name
     } else {
-        Write-Host "OCR gerado: $($nomeBase).pdf"
+        Write-Host "✅ OCR gerado: $($nomeBase).pdf" -ForegroundColor Green
     }
 }
 
-# Abre a pasta de saída
+if ($imagensErro.Count -gt 0) {
+    Write-Host "`n⚠ Alguns arquivos falharam:" -ForegroundColor Yellow
+    $imagensErro | ForEach-Object { Write-Host "- $_" -ForegroundColor Yellow }
+}
+
+# Abrir a pasta de saída
 Start-Process $saidaPath
-Write-Host "`n✅ Finalizado em ordem crescente!" -ForegroundColor Green
-pause
+
+Write-Host "`n🏁 Finalizado em ordem crescente!" -ForegroundColor Green
+Read-Host "Pressione ENTER para sair"

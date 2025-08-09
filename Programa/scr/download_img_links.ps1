@@ -1,5 +1,5 @@
 # Define as pastas e arquivos
-$inputFolder = ".\html_files"        # Pasta onde estão os arquivos .html
+$inputFolder = "..\html_files"        # Pasta onde estão os arquivos .html
 $outputFile = ".\Extract_links.txt" # Arquivo para salvar os links extraídos
 $downloadFolder = ".\Files_create\download_imgs"  # Pasta para salvar as imagens baixadas
 
