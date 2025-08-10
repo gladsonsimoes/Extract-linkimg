@@ -34,5 +34,8 @@ foreach ($pdf in $pdfFiles) {
     & $ghostscriptPath $args
 }
 
+# Abrir pasta de saída
+Start-Process $outputFolder
+
 Write-Host "Processo finalizado. PDFs comprimidos em $outputFolder"
 Pause

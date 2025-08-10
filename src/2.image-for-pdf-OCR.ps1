@@ -5,7 +5,7 @@ $tesseractPath = "..\modules\Tesseract-OCR\tesseract.exe"
 $tessdata = "..\modules\Tesseract-OCR\tessdata"
 
 # Pasta onde estão as imagens
-$imagensPath = "..\output\Files_create\download_imgs"
+$imagensPath = "..\output\Files_create\img_dpi"
 
 # Pasta de saída para gerar os PDFs
 $saidaPath = "..\output\Files_create\Pdf-ocr-create"
@@ -58,27 +58,12 @@ $imagensErro = @()
 foreach ($img in $imagens) {
     $imagem = $img.FullName
     $nomeBase = [System.IO.Path]::GetFileNameWithoutExtension($img.Name)
-    $tempImage = Join-Path $saidaPath "$nomeBase-prep.png"
     $saidaPDF = Join-Path $saidaPath $nomeBase
 
     Write-Host "🔍 Pré-processando e OCR: $($img.Name)..."
 
-    # Aumenta DPI e melhora contraste (ImageMagick)
-    #magick $imagem -density 300 -units PixelsPerInch -resize 300% -colorspace Gray -threshold 50% $tempImage
-
-    # Aumenta DPI mas mantém a cor
-    magick $imagem -density 300 -units PixelsPerInch -resize 300% $tempImage
-
-
-    # OCR otimizado com Tesseract
-   # & $tesseract $tempImage $saidaPDF -l por --oem 1 --psm 3 
-    #& $tesseract $imagem $saida -l por --dpi 300 --psm 3 -c tessedit_create_pdf=1
-
     # OCR preservando cor no PDF
-    & $tesseract $tempImage $saidaPDF -l por --dpi 300 --psm 3 pdf
-
-    # Remove temporário
-    Remove-Item $tempImage -Force
+    & $tesseract $imagem $saidaPDF -l por --dpi 300 --psm 3 pdf
 
     if ($LASTEXITCODE -ne 0) {
         Write-Host "❌ ERRO ao processar $($img.Name). Código: $LASTEXITCODE" -ForegroundColor Red

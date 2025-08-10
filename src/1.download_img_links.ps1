@@ -1,63 +1,66 @@
-# Define as pastas e arquivos
-$inputFolder = "..\html_files"        # Pasta onde est�o os arquivos .html
-$outputFile = "..\output\Extract_links.txt" # Arquivo para salvar os links extra�dos
-$downloadFolder = "..\output\Files_create\download_imgs"  # Pasta para salvar as imagens baixadas
+﻿# Caminhos
+$inputFolder     = "..\html_files"
+$outputFile      = "..\output\Extract_links.txt"
+$downloadFolder  = "..\output\Files_create\download_imgs"
+$outputImageDpi  = "..\output\Files_create\img_dpi"
 
-# Verifica se a pasta de entrada existe
+# Criação / limpeza de pastas
+foreach ($folder in @($downloadFolder, $outputImageDpi)) {
+    if (-not (Test-Path $folder)) {
+        New-Item -ItemType Directory -Path $folder | Out-Null
+    } else {
+        Remove-Item "$folder\*" -Force -Recurse
+    }
+}
+
+# Verifica pasta HTML
 if (-not (Test-Path $inputFolder)) {
-    Write-Host "A pasta '$inputFolder' n�o existe. Crie-a e adicione os arquivos .html." -ForegroundColor Red
+    Write-Host "❌ Pasta de entrada não encontrada: $inputFolder" -ForegroundColor Red
     exit
 }
 
-# Cria a pasta de downloads, se n�o existir
-if (-not (Test-Path $downloadFolder)) {
-    New-Item -Path $downloadFolder -ItemType Directory | Out-Null
-}
-
-# Limpa a pasta de imagens antigas
-Write-Host "Limpando imagens antigas..." -ForegroundColor Magenta
-Get-ChildItem -Path $downloadFolder -Filter "*.jpg" -Recurse | Remove-Item -Force
-
-# Limpa o arquivo de sa�da, se existir
-if (Test-Path $outputFile) {
-    Clear-Content $outputFile
-} else {
-    New-Item -Path $outputFile -ItemType File | Out-Null
-}
-
-# Processa todos os arquivos .html na pasta
+# Extrair links rapidamente
+$links = @()
 Get-ChildItem -Path $inputFolder -Filter "*.html" | ForEach-Object {
-    $htmlFile = $_.FullName
-    Write-Host "Processando arquivo: $htmlFile" -ForegroundColor Green
-
-    # L� cada linha do arquivo e encontra links com 'linkimg='
-    Get-Content $htmlFile | ForEach-Object {
-        $line = $_
-        if ($line -match 'linkimg="([^"]+)"') {
-            $link = $matches[1]
-            Write-Host "Link encontrado: $link" -ForegroundColor Yellow
-            Add-Content -Path $outputFile -Value $link
-        }
+    $matches = Select-String -Path $_.FullName -Pattern 'linkimg="([^"]+)"'
+    foreach ($m in $matches) {
+        $links += $m.Matches.Groups[1].Value
     }
 }
 
-# Exibe os links extra�dos
-Write-Host "`nLinks extra�dos:" -ForegroundColor Cyan
-Get-Content $outputFile | ForEach-Object { Write-Host $_ }
+# Salva todos os links de uma vez
+$links | Set-Content $outputFile
+Write-Host "✅ $($links.Count) links extraídos" -ForegroundColor Green
 
-# Baixa as imagens dos links com nomes num�ricos crescentes
-Write-Host "`nBaixando imagens..." -ForegroundColor Green
+# Baixar imagens sequencialmente
+Write-Host "`n⬇ Baixando imagens..." -ForegroundColor Cyan
 $imageCounter = 1
-Get-Content $outputFile | ForEach-Object {
-    $url = $_
+foreach ($url in $links) {
     $fileName = "arquivo_$imageCounter.jpg"
     $destinationPath = Join-Path $downloadFolder $fileName
-
     try {
-        Invoke-WebRequest -Uri $url -OutFile $destinationPath
+        Invoke-WebRequest -Uri $url -OutFile $destinationPath -ErrorAction Stop
         Write-Host "Imagem baixada: $fileName" -ForegroundColor Green
-        $imageCounter++
     } catch {
         Write-Host "Falha ao baixar: $url" -ForegroundColor Red
     }
+    $imageCounter++
 }
+
+# Ajustar DPI (ImageMagick) sequencialmente
+Write-Host "`n🖼 Aumentando DPI..." -ForegroundColor Cyan
+$imagens = Get-ChildItem -Path $downloadFolder -File |
+    Where-Object { $_.Extension -match '^\.(png|jpg|jpeg|tif|tiff|bmp)$' } |
+    Sort-Object {
+        $num = $_.BaseName -replace '\D', ''
+        if ([string]::IsNullOrEmpty($num)) { 0 } else { [int]$num }
+    }
+
+foreach ($img in $imagens) {
+    $nomeBase = [System.IO.Path]::GetFileNameWithoutExtension($img.Name)
+    $tempImage = Join-Path $outputImageDpi "$nomeBase.png"
+    magick $img.FullName -density 300 -units PixelsPerInch -resize 300% $tempImage
+    Write-Host "🔍 Processado: $($img.Name)" -ForegroundColor Yellow
+}
+
+Write-Host "`n🏁 Finalizado!" -ForegroundColor Green
