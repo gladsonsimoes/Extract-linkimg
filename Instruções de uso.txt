@@ -3,14 +3,15 @@ O modo com OCR ele extrai texto de imagem , sendo ideal para quem usa buscar no 
 
 UTILIZAÇÃO:
 
-- Vá para a pasta Programas
+- entra em um site que os elementos do código da página são em img (Exemplo: site de apostila , site de livros e etc)
 
-- entra um site por exemplo um site de apostila que as páginas são em imagem , abre e cópie o elemento da página com F12 que você quer salvar as imagens ,
+- abre o código fonte da página com F12 do teclado e copie o elemento <body> ou <main> do html que você quer salvar as imagens ,
  e cole o elemento dentro do arquivo.html na pasta "html_files"
 
-- Após colocar o arquivo html com o código , vá no script "download_img_links.ps1" e clique em executar , o script irá copiar todos os links do html que contém o atributo img, e as imagens serão baixadas na pasta "Files-Create\downloaded_images".
+- Após preencher o arquivo html com o código , vá na pasta src no script "download_img_links.ps1" e clique co botão direito em executar , o script irá copiar todos os links do html que contém o atributo img, e as imagens serão baixadas na pasta "Files-Create\downloaded_images".
 
-- após você ter baixado todas as imagens você pode ir no script "image-for-pdf-OCR.ps1" para converter as imagens em pdf, os arquivos de pdf serão salvos na pasta "Files-Create\pdfCreate"
+- após você ter baixado todas as imagens você pode ir na pasta src no script "image-for-pdf-OCR.ps1" para converter as imagens em pdf, os arquivos de pdf serão salvos na pasta "Files-Create\pdfCreate"
 
-- em seguida se você quiser pode unir as páginas de pdf no script "pdf-merged.ps1" ,  os arquivos de pdf mesclados serão salvos na pasta "Files-Create\pdf-Mesclado"
+- em seguida se você quiser pode unir as páginas de pdf no script "pdf-merged" da pasta src ,  os arquivos de pdf mesclados serão salvos na pasta "Files-Create\pdf-Mesclado"
 
+- logo depois você pode comprimir o arquivo na script "pdf-comprimed" da pasta src,  para ele ser armazenado com tamanho menor
