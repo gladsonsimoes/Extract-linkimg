@@ -1,8 +1,21 @@
-﻿# Caminhos
-$inputFolder     = "..\html_files"
-$outputFile      = "..\output\Extract_links.txt"
-$downloadFolder  = "..\output\Files_create\download_imgs"
-$outputImageDpi  = "..\output\Files_create\img_dpi"
+﻿# Caminho raiz do projeto
+$rootPath = Split-Path $PSScriptRoot -Parent
+
+# Caminho do ImageMagick
+$magickPath = Join-Path $rootPath "modules\ImageMagick-7.1.2-Q16-HDRI\magick.exe"
+
+
+if (-not (Test-Path $magickPath)) {
+    Write-Host "❌ ImageMagick não encontrado: $magickPath" -ForegroundColor Red
+    Read-Host "Pressione ENTER para sair"
+    exit
+}
+
+# Caminhos
+$inputFolder    = Join-Path $rootPath "html_files"
+$outputFile     = Join-Path $rootPath "output\Extract_links.txt"
+$downloadFolder = Join-Path $rootPath "output\Files_create\download_imgs"
+$outputImageDpi = Join-Path $rootPath "output\Files_create\img_dpi"
 
 # Criação / limpeza de pastas
 foreach ($folder in @($downloadFolder, $outputImageDpi)) {
@@ -59,7 +72,12 @@ $imagens = Get-ChildItem -Path $downloadFolder -File |
 foreach ($img in $imagens) {
     $nomeBase = [System.IO.Path]::GetFileNameWithoutExtension($img.Name)
     $tempImage = Join-Path $outputImageDpi "$nomeBase.png"
-    magick $img.FullName -density 300 -units PixelsPerInch -resize 300% $tempImage
+    & $magickPath `
+    $img.FullName `
+    -density 300 `
+    -units PixelsPerInch `
+    -resize 300% `
+    $tempImage
     Write-Host "🔍 Processado: $($img.Name)" -ForegroundColor Yellow
 }
 

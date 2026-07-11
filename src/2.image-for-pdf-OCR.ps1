@@ -1,14 +1,19 @@
-﻿# Caminho do executável Tesseract
-$tesseractPath = "..\modules\Tesseract-OCR\tesseract.exe"
+﻿# Diretório raiz do projeto
+$rootPath = Split-Path $PSScriptRoot -Parent
+
+# Caminho do executável Tesseract
+$tesseractPath = Join-Path $rootPath "modules\Tesseract-OCR\tesseract.exe"
 
 # Caminho do TESSDATA
-$tessdata = "..\modules\Tesseract-OCR\tessdata"
+$tessdata = Join-Path $rootPath "modules\Tesseract-OCR\tessdata"
 
 # Pasta onde estão as imagens
-$imagensPath = "..\output\Files_create\img_dpi"
+$imagensPath = Join-Path $rootPath "output\Files_create\img_dpi"
 
 # Pasta de saída para gerar os PDFs
-$saidaPath = "..\output\Files_create\Pdf-ocr-create"
+$saidaPath = Join-Path $rootPath "output\Files_create\Pdf-ocr-create"
+
+
 
 # --- Verificações de caminho ---
 if (-not (Test-Path $tesseractPath)) {

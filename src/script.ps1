@@ -1,57 +1,53 @@
-$downloadimg = ".\1.download_img_links.ps1"
-$convertPdf = ".\2.image-for-pdf-OCR.ps1"
-$pdfMerge = ".\3.pdf-merged.ps1"
-$compressedPdf = ".\4.pdf-comprimed.ps1"
 
+$downloadimg   = Join-Path $PSScriptRoot "1.download_img_links.ps1"
+$convertPdf    = Join-Path $PSScriptRoot "2.image-for-pdf-OCR.ps1"
+$mergeCompress = Join-Path $PSScriptRoot "3.merge-compress.ps1"
 
-Write-Host "Escolha uma opcao:"
-Write-Host "1 - Baixar imagem do arquivo html"
+#Menu 
+
+Write-Host "===== MENU ====="
+Write-Host "1 - Executar tudo em sequência (dependendo da quantidade esse processo pode demorar)"
+Write-Host "2 - Baixar imagens do arquivo html files"
+Write-Host "3 - Converter imagem para PDF ( com tecnologia OCR )"
+Write-Host "4 - Mesclar e Comprimir PDFs"
+Write-Host "0 - Sair"
+
+#código de execução
 
 $opcao = Read-Host "Digite o numero da opcao"
 
-if ($opcao -eq "1") 
+switch ($opcao)
 {
-    Write-Host "Baixando imagens dos links do arquivo html..."
-    & $downloadimg
+    "1" {
+        Write-Host "Baixando imagens..."
+        & $downloadimg
 
-    Write-Host "Deseja converter as imagens para PDF? "
-    Write-Host "1 - converter com o modo OCR"
-    
+        Write-Host "Executando OCR..."
+        & $convertPdf
 
-    $opcao = Read-Host "Digite o nï¿½mero da opï¿½ï¿½o:"
+        Write-Host "Mesclando e Comprimindo PDFs..."
+        & $mergeCompress
 
-    if ($opcao -eq "1") 
-    {
-       Write-Host "Baixando imagens dos links do arquivo html..."
-       & $convertPdf
-
-       Write-Host "Deseja mesclar os pdf gerado? "
-       Write-Host "1 - Mesclar PDFS"
-
-        $opcao = Read-Host "Digite o numero invalida:"
-
-        if($opcao -eq "1"){
-            Write-Host "Mesclando"
-            & $pdfMerge
-            
-            Write-Host "Deseja reduzir o tamanho do arquivo"
-            Write-Host "1 - reduzir tamanho do PDF"
-
-            $opcao = Read-Host "Digite o numero da opcao"
-
-            if ($opcao -eq "1") {
-            Write-Host "Reduzindo o tamanho do arquivo" 
-            & $compressedPdf
-            } else {
-               exit
-            } 
-
-        } else {
-            Write-Host "Opcao invalida!"
-        }
+        Write-Host "Processo concluido!"
     }
-} 
-else {
-    Write-Host "Opï¿½ï¿½o invï¿½lida!"
-}
 
+    "2" {
+        Write-Host "Baixando imagens..."
+        & $downloadimg
+    }
+
+    "3" {
+        Write-Host "Executando OCR..."
+        & $convertPdf
+    }
+
+    "4" {
+    Write-Host "Mesclando e Comprimindo PDF..."
+    & $mergeCompress
+    }
+
+
+    "0" {
+        exit
+    }
+}
